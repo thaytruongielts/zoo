@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập Tiếng Anh Lớp 5: Visiting a Zoo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .passage {
+            border-left: 5px solid #007bff;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            font-style: italic;
+            background-color: #e9f5ff;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .question {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 15px;
+        }
+        .question p {
+            font-weight: bold;
+            color: #555;
+        }
+        .answer-input {
+            width: 80%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .check-btn {
+            padding: 8px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .check-btn:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .correct {
+            color: #28a745;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .choices {
+            margin-top: 10px;
+            display: none; /* Ban đầu ẩn */
+        }
+        .choices button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            text-align: left;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .choices button:hover {
+            background-color: #e2e6ea;
+        }
+        .choices button.correct-choice {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Bài Tập Tiếng Anh Lớp 5</h1>
+        <h2>Đoạn Văn: A Visit to a Zoo</h2>
+        <div class="passage">
+            <p>
+                Visiting a zoo is an important part of education in one's life. A zoo is a very spectacular place. It is a place of the animal world. I had been waiting for visiting a zoo from my childhood. I am lucky that during the last winter vacation, I got the chance to visit the Mirun National Zoo which is the biggest and the oldest zoo in Bangladesh.
+            </p>
+            <p>
+                I went to the zoo with my grandfathers by taxi. We reached the gate of the zoo at 10:00 a.m. There was a big gathering of people of all ages in front of the gate. We bought two tickets and entered the zoo. Our joy knew no bounds. The total area of the zoo is about 313 acres of land. There are about 2,500 species of animals in this world famous zoo.
+            </p>
+            <p>
+                At first we went to the cage of crocodiles. We saw the crocodiles basking in the sun. Then we saw a lot of monkeys jumping from one branches to another. We saw various kinds of birds and animals in their cages. Lions, deer, bears, zebras, elephants, horses and hyenas were the main attraction to me. Among the birds, peacocks, miners, etc. were the most fascinating and enjoyable to me.
+            </p>
+        </div>
+        <hr>
+
+        <h2>Hãy trả lời các câu hỏi sau:</h2>
+
+        <div class="question" id="q1">
+            <p>1. What is the name of the zoo the author visited?</p>
+            <input type="text" class="answer-input" id="input1" placeholder="Type your answer here...">
+            <button class="check-btn" onclick="checkAnswer(1)">Check</button>
+            <div class="result" id="result1"></div>
+            <div class="choices" id="choices1">
+                <button onclick="checkMultipleChoice(1, 'A')">A) The National Zoo of Dhaka</button>
+                <button onclick="checkMultipleChoice(1, 'B')">B) Mirun National Zoo</button>
+                <button onclick="checkMultipleChoice(1, 'C')">C) The Big Zoo</button>
+                <button onclick="checkMultipleChoice(1, 'D')">D) The Oldest Zoo</button>
+            </div>
+        </div>
+
+        <div class="question" id="q2">
+            <p>2. How did the author go to the zoo?</p>
+            <input type="text" class="answer-input" id="input2" placeholder="Type your answer here...">
+            <button class="check-btn" onclick="checkAnswer(2)">Check</button>
+            <div class="result" id="result2"></div>
+            <div class="choices" id="choices2">
+                <button onclick="checkMultipleChoice(2, 'A')">A) By taxi</button>
+                <button onclick="checkMultipleChoice(2, 'B')">B) By car</button>
+                <button onclick="checkMultipleChoice(2, 'C')">C) By bus</button>
+                <button onclick="checkMultipleChoice(2, 'D')">D) By train</button>
+            </div>
+        </div>
+        
+        <div class="question" id="q3">
+            <p>3. What time did they reach the gate of the zoo?</p>
+            <input type="text" class="answer-input" id="input3" placeholder="Type your answer here...">
+            <button class="check-btn" onclick="checkAnswer(3)">Check</button>
+            <div class="result" id="result3"></div>
+            <div class="choices" id="choices3">
+                <button onclick="checkMultipleChoice(3, 'A')">A) 9:00 a.m.</button>
+                <button onclick="checkMultipleChoice(3, 'B')">B) 11:00 a.m.</button>
+                <button onclick="checkMultipleChoice(3, 'C')">C) 10:00 a.m.</button>
+                <button onclick="checkMultipleChoice(3, 'D')">D) 12:00 p.m.</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const answers = {
+            1: {
+                correct: "Mirun National Zoo",
+                choices: {
+                    A: "The National Zoo of Dhaka",
+                    B: "Mirun National Zoo",
+                    C: "The Big Zoo",
+                    D: "The Oldest Zoo"
+                },
+                correctChoice: 'B'
+            },
+            2: {
+                correct: "by taxi",
+                choices: {
+                    A: "By taxi",
+                    B: "By car",
+                    C: "By bus",
+                    D: "By train"
+                },
+                correctChoice: 'A'
+            },
+            3: {
+                correct: "10:00 a.m.",
+                choices: {
+                    A: "9:00 a.m.",
+                    B: "11:00 a.m.",
+                    C: "10:00 a.m.",
+                    D: "12:00 p.m."
+                },
+                correctChoice: 'C'
+            }
+        };
+
+        function checkAnswer(questionNumber) {
+            const input = document.getElementById(`input${questionNumber}`);
+            const resultDiv = document.getElementById(`result${questionNumber}`);
+            const choicesDiv = document.getElementById(`choices${questionNumber}`);
+            const userAnswer = input.value.trim().toLowerCase();
+            const correctAnswer = answers[questionNumber].correct.toLowerCase();
+
+            if (userAnswer === correctAnswer) {
+                resultDiv.innerHTML = "🎉 Tuyệt vời! Bạn đã trả lời đúng.";
+                resultDiv.className = "result correct";
+                choicesDiv.style.display = 'none'; // Ẩn trắc nghiệm nếu trả lời đúng
+            } else {
+                resultDiv.innerHTML = "Chưa đúng. Vui lòng chọn một trong các đáp án sau:";
+                resultDiv.className = "result incorrect";
+                choicesDiv.style.display = 'block'; // Hiển thị trắc nghiệm
+            }
+        }
+
+        function checkMultipleChoice(questionNumber, choice) {
+            const resultDiv = document.getElementById(`result${questionNumber}`);
+            const choicesDiv = document.getElementById(`choices${questionNumber}`);
+            const correctChoice = answers[questionNumber].correctChoice;
+
+            if (choice === correctChoice) {
+                resultDiv.innerHTML = "🎉 Chúc mừng! Bạn đã chọn đáp án đúng.";
+                resultDiv.className = "result correct";
+                // Tô màu đáp án đúng
+                const buttons = choicesDiv.getElementsByTagName('button');
+                for (let i = 0; i < buttons.length; i++) {
+                    if (buttons[i].textContent.startsWith(correctChoice)) {
+                        buttons[i].style.backgroundColor = '#d4edda';
+                        buttons[i].style.borderColor = '#c3e6cb';
+                    }
+                }
+            } else {
+                resultDiv.innerHTML = "Chưa đúng. Hãy thử lại.";
+                resultDiv.className = "result incorrect";
+            }
+        }
+    </script>
+
+</body>
+</html>
